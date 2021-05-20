@@ -8,5 +8,13 @@
   },
   "keywords": [],
   "author": "O.R.",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rutkevicius0/JS-WebPack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rutkevicius0/JS-WebPack/issues"
+  },
+  "homepage": "https://github.com/Rutkevicius0/JS-WebPack#readme"
 }
