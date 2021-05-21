@@ -3,7 +3,7 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  devtool: false, // kai sukompiliuojam nebutu nesamoniu nereikalingu
+  devtool: "source-map", // kai sukompiliuojam nebutu nesamoniu nereikalingu
   devServer: {
     contentBase: "./dist",
   },
