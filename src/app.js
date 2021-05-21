@@ -1,8 +1,8 @@
 import add from "./js/add.js";
 import say from "./js/say.js";
 import "./css/style.css";
-import banner from "./banner/ban";
-import aside from "./aside/aside";
+import banner from "./components/banner/ban";
+import aside from "./components/aside/aside";
 // const path = require("path");
 // console.log("path", path.resolve(__dirname));
 
