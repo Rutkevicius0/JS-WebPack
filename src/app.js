@@ -3,6 +3,7 @@ import say from "./js/say.js";
 import "./css/style.css";
 import banner from "./components/banner/ban";
 import aside from "./components/aside/aside";
+import modal from "./components/modal/modal";
 // const path = require("path");
 // console.log("path", path.resolve(__dirname));
 
@@ -25,8 +26,11 @@ document.body.append(bestBanner);
 const bestAside = aside("List", "Click me!");
 document.body.append(bestAside);
 
-const asideBtn = document
-  .querySelector(".aside__button")
-  .addEventListener("click", (event) => {
-    console.log(event.target.previousSibling.previousSibling.textContent);
-  });
+document.querySelector(".aside__button").addEventListener("click", (event) => {
+  console.log(event.target.previousSibling.previousSibling.textContent);
+});
+
+document.querySelector(".modal-open__button").addEventListener("click", () => {
+  console.log("veikia");
+  modal();
+});
