@@ -4,8 +4,11 @@ import "./css/style.css";
 import banner from "./components/banner/ban";
 import aside from "./components/aside/aside";
 import modal from "./components/modal/modal";
+
+import wz from "./img/download.jpeg";
 // const path = require("path");
 // console.log("path", path.resolve(__dirname));
+console.log("wz", wz);
 
 console.log("add", add(1, 2, 3));
 
