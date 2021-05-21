@@ -13,6 +13,7 @@ function aside(title, btnText) {
   });
   const btnEl = document.createElement("button");
   btnEl.textContent = btnText;
+  btnEl.className = "aside__button";
 
   aside.append(h2El, ulEl, btnEl);
   return aside;

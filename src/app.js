@@ -24,3 +24,9 @@ document.body.append(bestBanner);
 
 const bestAside = aside("List", "Click me!");
 document.body.append(bestAside);
+
+const asideBtn = document
+  .querySelector(".aside__button")
+  .addEventListener("click", (event) => {
+    console.log(event.target.previousSibling.previousSibling.textContent);
+  });
