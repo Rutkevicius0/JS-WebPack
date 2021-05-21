@@ -2,7 +2,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
+  mode: "development",
   devtool: false, // kai sukompiliuojam nebutu nesamoniu nereikalingu
+  devServer: {
+    contentBase: "./dist",
+  },
   entry: {
     //nurodom pagrindini js faila
     main: path.resolve(__dirname, "./src/app.js"),
