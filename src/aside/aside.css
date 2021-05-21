@@ -1,0 +1,9 @@
+.aside {
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 1em;
+  background-color: snow;
+  color: coral;
+  width: 33%;
+  float: right;
+}
