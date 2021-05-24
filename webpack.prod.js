@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -13,9 +14,14 @@ module.exports = {
     filename: "final.bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    //assetModuleFilename: "images/[name][ext]",
   },
   module: {
     rules: [
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
       { test: /\.css$/i, use: [MiniCssExtractPlugin.loader, "css-loader"] },
       {
         test: /\.m?js$/,
@@ -30,12 +36,25 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: "This is dinamic Webpack title",
-      template: "src/indexTemplate.html",
+    new ImageMinimizerPlugin({
+      filename: "img/[name].webp",
+      deleteOriginalAssets: true,
+      minimizerOptions: {
+        plugins: [
+          "imagemin-webp",
+          "gifsicle",
+          "pngquant",
+          "svgo",
+          ["mozjpeg", { quality: 50 }],
+        ],
+      },
     }),
     new MiniCssExtractPlugin({
       filename: "style.css",
+    }),
+    new HtmlWebpackPlugin({
+      title: "This is dinamic Webpack title",
+      template: "src/indexTemplate.html",
     }),
   ],
 };
